@@ -11,7 +11,7 @@ _logger = logging.getLogger(__name__)
 
 class Book_create_isbn(models.TransientModel):
     _name = "book.create.isbn"
-    _description = "Search Book and Create Record"
+    _description = "ISBN"
 
     name = fields.Char("Title")
     is_search_book = fields.Boolean('Is Search Book')
@@ -23,7 +23,7 @@ class Book_create_isbn(models.TransientModel):
     edition = fields.Char("Edition")
     publish_date = fields.Char("Publish Date")
     binding = fields.Char("Binding")
-    isbn_auther_ids = fields.Many2many('isbn.auther.publiser', string='Authers')
+    isbn_auther_ids = fields.Many2many('isbn.auther.publiser', string='Authors')
     isbn_publisher_id = fields.Many2one('isbn.auther.publiser','Publisher')
 
     @api.multi
